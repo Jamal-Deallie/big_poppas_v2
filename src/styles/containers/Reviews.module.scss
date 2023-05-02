@@ -1,0 +1,19 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.reviews {
+  ul {
+    display: flex;
+    align-items: center;
+    gap: mobile-vw(48px);
+    flex-direction: column;
+  }
+
+  @include desktop {
+    ul {
+      gap: desktop-vw(64px);
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}

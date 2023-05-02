@@ -1,0 +1,38 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.btn {
+  display: inline-block;
+  appearance: button;
+  background-color: transparent;
+  color: var(--primary-variant);
+  border: 2px solid var(--primary-variant);
+  border-radius: 50%;
+  margin-right: mobile-vw(5px);
+  cursor: pointer;
+  padding: mobile-vw(10px);
+  svg {
+    aspect-ratio: 1;
+    width: auto;
+    height: calc(var(--nav-height) - mobile-vw(42px));
+    fill: var(--tertiary-variant);
+  }
+
+  &:hover {
+    background-color: var(--primary-variant);
+
+    svg {
+      fill: var(--secondary-variant);
+    }
+  }
+
+  @include desktop {
+    font-size: desktop-vw(15px);
+    padding: desktop-vw(12px) desktop-vw(12px);
+    margin-right: desktop-vw(5px);
+
+    svg {
+      height: calc(var(--nav-height) - desktop-vw(56px));
+    }
+  }
+}

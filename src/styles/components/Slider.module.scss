@@ -1,0 +1,20 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.arr-r,
+.arr-l {
+  position: relative;
+  width: mobile-vw(30px);
+  height: mobile-vw(30px);
+
+  @include desktop {
+    width: desktop-vw(75px);
+    height: desktop-vw(75px);
+  }
+}
+.arr-r {
+  transform: rotate(-90deg);
+}
+.arr-l {
+  transform: rotate(90deg);
+}

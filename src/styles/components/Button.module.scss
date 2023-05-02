@@ -1,0 +1,99 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.base {
+  appearance: button;
+  border-radius: 4px;
+  box-sizing: border-box;
+  // color: #000;
+  cursor: pointer;
+  display: inline-block;
+  // font-family: var(--heading-font);
+  line-height: 1;
+  // font-size: mobile-vw(15px);
+  overflow: visible;
+  // padding: mobile-vw(10px) mobile-vw(8px);
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  // @include mobile {
+  //   margin-top: mobile-vw(24px);
+  // }
+  @include desktop {
+    // padding: desktop-vw(12px) desktop-vw(32px);
+    // font-size: desktop-vw(16px);
+  }
+}
+
+.sm {
+  padding-inline: 1.6rem;
+  height: 32px;
+  font-size: 16px;
+}
+
+.md {
+  height: 48px;
+  font-size: mobile-vw(15px);
+  padding-inline: mobile-vw(12px);
+
+  @include desktop {
+    padding-inline: desktop-vw(12px);
+    font-size: desktop-vw(19px);
+  }
+}
+
+// .lrg {
+//   padding-inline: 32px;
+//   height: 52px;
+//   font-size: 16px;
+// }
+
+.lrg {
+  padding: mobile-vw(10px) mobile-vw(8px);
+  font-size: mobile-vw(15px);
+  // width: 100%;
+
+  @include desktop {
+    padding: desktop-vw(12px) desktop-vw(48px);
+    font-size: desktop-vw(16px);
+  }
+}
+
+.font-heading {
+  font-family: var(--heading-font);
+}
+
+.font-body {
+  font-family: var(--heading-font);
+}
+
+.bg-tertiary {
+  background-color: var(--tertiary-variant);
+  box-shadow: var(--secondary-variant) 4px 4px 0 0,
+    var(--secondary-variant) 4px 4px 0 1px;
+  border: 2px solid #000;
+  color: var(--secondary-variant);
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+    outline: 0;
+  }
+}
+
+.bg-secondary {
+  background-color: var(--secondary-variant);
+  box-shadow: var(--tertiary-variant) 4px 4px 0 0,
+    var(--secondary-variant) 4px 4px 0 1px;
+  border: 2px solid var(--secondary-variant);
+  color: var(--tertiary-variant);
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+    outline: 0;
+  }
+}

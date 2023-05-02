@@ -1,0 +1,109 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.intro {
+  margin: mobile-vw(48px) 0 mobile-vw(96px) 0;
+
+  @include desktop {
+    margin: desktop-vw(128px) 0;
+  }
+}
+.content {
+  grid-column: 1 / -1;
+  @include desktop {
+    grid-column: 1 / 7;
+    margin-top: desktop-vw(64px);
+  }
+}
+.pizza {
+  grid-column: 1 / -1;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  border: 3px solid var(--secondary-variant);
+  width: 100%;
+  height: 100%;
+  @include mobile {
+    max-width: mobile-vw(500px);
+    margin-inline: auto;
+  }
+  @include desktop {
+    grid-column: 8 / -1;
+  }
+}
+.img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    filter: brightness(90%);
+  }
+}
+
+.logo {
+  position: relative;
+  aspect-ratio: 1;
+  height: mobile-vw(24px);
+  width: auto;
+  margin-inline: auto;
+  margin-bottom: mobile-vw(16px);
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @include desktop {
+    margin-bottom: desktop-vw(16px);
+    height: desktop-vw(40px);
+  }
+}
+
+.btn {
+  appearance: button;
+  background-color: var(--secondary-variant);
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: var(--tertiary-variant) 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: var(--tertiary-variant);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--heading-font);
+  line-height: 20px;
+
+  overflow: visible;
+  padding: desktop-vw(8px) desktop-vw(32px);
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+    outline: 0;
+  }
+
+  &:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+  }
+
+  // @media (min-width: 768px) {
+  //   padding: 12px 50px;
+  // }
+}

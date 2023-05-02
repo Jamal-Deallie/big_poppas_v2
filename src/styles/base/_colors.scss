@@ -1,0 +1,24 @@
+@use 'sass:color';
+@use '@/styles/abstracts/_index' as *;
+
+$colors: (
+  'primary': #E05333,
+  'secondary': #000,
+  'tertiary': #fff,
+  'ghost': transparent,
+);
+
+@each $name, $color in $colors {
+  .#{$name}-clr {
+    color: #{$color};
+  }
+  .#{$name}-bg {
+    background-color: #{$color};
+  }
+}
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}-variant: #{$color};
+  }
+}

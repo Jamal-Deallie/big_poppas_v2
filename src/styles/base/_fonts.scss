@@ -1,0 +1,12 @@
+@use '@/styles/abstracts/_index' as *;
+
+$fonts: (
+  'body': neue-haas-unica,
+  'heading': new-kansas,
+);
+
+:root {
+  @each $name, $font in $fonts {
+    --#{$name}-font: #{$font};
+  }
+}

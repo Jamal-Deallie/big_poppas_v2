@@ -1,0 +1,29 @@
+@use '@/styles/abstracts/_index' as *;
+@use '@/styles/base/_media' as *;
+
+.title,
+.content {
+  grid-column: 1 / -1;
+}
+
+.title {
+  h1 {
+    margin-inline: auto;
+  }
+
+  @include desktop {
+    max-width: desktop-vw(800px);
+    margin-inline: auto;
+  }
+}
+
+.content{
+
+  margin-top: mobile-vw(24px);
+
+  @include desktop {
+    margin-top: desktop-vw(24px);  
+  }
+  
+
+}
