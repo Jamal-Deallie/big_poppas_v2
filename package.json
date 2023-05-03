@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",
@@ -40,8 +41,14 @@
     "zustand": "^4.3.6"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@svgr/webpack": "^7.0.0",
     "@types/mapbox-gl": "^2.7.10",
-    "@types/react-datepicker": "^4.10.0"
+    "@types/react-datepicker": "^4.10.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
   }
 }

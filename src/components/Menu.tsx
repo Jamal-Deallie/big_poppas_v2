@@ -38,7 +38,7 @@ export default function Menu({}: Props) {
     return () => {
       router.events.off('routeChangeStart', onRouteChange);
     };
-  }, []);
+  }, [router.events, setNavIsOpened]);
 
   const tl = useRef<gsap.core.Timeline | null>(null);
 
@@ -59,7 +59,7 @@ export default function Menu({}: Props) {
               autoAlpha: 1,
               yPercent: 0,
               display: 'block',
-              ease: 'power3.inOut',
+              ease: 'power3.inOut'
             },
             '-=50%'
           )
@@ -71,8 +71,8 @@ export default function Menu({}: Props) {
               yPercent: 0,
               opacity: 1,
               stagger: {
-                amount: 0.2,
-              },
+                amount: 0.2
+              }
             }
           )
           .reverse();
@@ -92,21 +92,22 @@ export default function Menu({}: Props) {
   return (
     <>
       <button
-        role='button'
-        id='btn'
+        role="button"
+        id="btn"
         onClick={openShopMenu}
-        className={cn(styles['btn'], navIsOpened ? styles['open'] : null)}>
-        <span id='line1' />
-        <span id='line2' />
-        <span id='line3' />
+        className={cn(styles['btn'], navIsOpened ? styles['open'] : null)}
+      >
+        <span id="line1" />
+        <span id="line2" />
+        <span id="line3" />
       </button>
 
-      <div className={styles.menu} id='cont'>
+      <div className={styles.menu} id="cont">
         <div className={styles.overlay}>
           <ul>
             {links.map(({ id, label, path }) => {
               return (
-                <li key={id} id='link'>
+                <li key={id} id="link">
                   <Link href={path}>{label}</Link>
                 </li>
               );

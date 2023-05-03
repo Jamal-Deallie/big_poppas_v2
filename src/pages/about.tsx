@@ -1,13 +1,24 @@
-import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
+import { SEOResults as Results } from '@/types/typings';
 import Story from '@/containers/Story';
 import TenCommandments from '@/containers/TenCommandments';
-type Props = {};
 
-export default function About({}: Props) {
+type PageProps = { seo?: Results };
+
+export default function About({ seo }: PageProps) {
   return (
-    <Layout>
+    <>
+      <SEO {...seo} />
       <Story />
       <TenCommandments />
-    </Layout>
+    </>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      id: 'about'
+    }
+  };
 }

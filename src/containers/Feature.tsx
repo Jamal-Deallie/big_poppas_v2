@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-import MarqueeLoop from '@/components/MarqueeLoop';
 import { featureItems } from '@/data/featureItems';
 import Image from 'next/image';
 import styles from '@/styles/containers/Feature.module.scss';

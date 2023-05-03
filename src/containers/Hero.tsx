@@ -6,22 +6,22 @@ type Props = {};
 export default function Hero({}: Props) {
   return (
     <section className={cn(styles['hero'], 'bg-secondary')}>
-      <div className='grid-inner'>
+      <div className="grid-inner">
         <div className={styles['hero']}>
           <div className={styles['img-cont']}>
             <div className={styles['img']}>
               <Image
-                src='https://res.cloudinary.com/dtwk4dm3g/image/upload/v1683002423/big_poppas/hero_gnbmxh.webp'
-                alt='Hero'
+                src="https://res.cloudinary.com/dtwk4dm3g/image/upload/v1683002423/big_poppas/hero_gnbmxh.webp"
+                alt="Hero"
                 fill
-                sizes='(max-width: 768px) 100vw)'
+                sizes="(max-width: 768px) 100vw)"
                 priority
               />
             </div>
           </div>
           <div className={styles['cta']}>
             <div className={styles['inner']}>
-              <div className='grid-inner'>
+              <div className="grid-inner">
                 <div className={styles['title']}>
                   <h1 className={styles['hero-title']}>
                     <span className={styles['accent']}>We</span> Love
@@ -31,10 +31,10 @@ export default function Hero({}: Props) {
                   </h1>
                 </div>
                 <div className={styles['desc']}>
-                  <p className='txt'>
+                  <p className="txt">
                     Immerse yourself in the world of the Notorious B.I.G at Big
-                    Poppa's Pizzeria, where the pizzas are always juicy and the
-                    flavors are notorious.
+                    {`Poppa's`} Pizzeria, where the pizzas are always juicy and
+                    the flavors are notorious.
                   </p>
                 </div>
 

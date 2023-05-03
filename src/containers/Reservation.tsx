@@ -11,7 +11,7 @@ type Props = {
 };
 
 const Calendar = dynamic(() => import('@/svgs/Calendar'), {
-  ssr: false,
+  ssr: false
 });
 export default function Reservation({ as }: Props) {
   const [toggleLogin, setToggleLogin] = useState(false);
@@ -19,7 +19,7 @@ export default function Reservation({ as }: Props) {
 
   const toggleFunction = useCallback(() => {
     setToggleLogin(toggleLogin => !toggleLogin);
-  }, [setToggleLogin, toggleLogin]);
+  }, []);
 
   useEffect(() => {
     if (toggleLogin) {
@@ -39,7 +39,8 @@ export default function Reservation({ as }: Props) {
           bgc={'secondary'}
           size={'lrg'}
           font={'heading'}
-          onClick={toggleFunction}>
+          onClick={toggleFunction}
+        >
           Book A Table
         </Button>
       )}

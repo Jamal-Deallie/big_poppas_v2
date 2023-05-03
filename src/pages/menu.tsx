@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Layout from '@/components/Layout';
+import SEO from '@/components/SEO';
+import { SEOResults as Results } from '@/types/typings';
 import { MenuItems } from '@/components/MenuItems';
 import styles from '@/styles/pages/Menu.module.scss';
 import cn from 'classnames';
@@ -9,7 +10,9 @@ type MenuProps = {
   category: string;
 };
 
-export default function Menu() {
+type PageProps = { seo?: Results };
+
+export default function Menu({ seo }: PageProps) {
   const categories: ReadonlyArray<MenuProps> = [
     { id: 1, category: 'pizzas' },
     { id: 2, category: 'drinks' },
@@ -19,7 +22,8 @@ export default function Menu() {
   const [selectedCat, setSelectedCat] = useState(categories[0] as MenuProps);
 
   return (
-    <Layout>
+    <>
+          <SEO {...seo} />
       <section className={cn(styles['menu'], 'ptb-11')}>
         <div className='main-cont'>
           <div className='title'>
@@ -47,6 +51,16 @@ export default function Menu() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
+}
+
+
+
+export async function getStaticProps() {
+  return {
+    props: {
+      id: 'about'
+    }
+  };
 }

@@ -11,7 +11,7 @@ export default function Intro({}: Props) {
         <div className='grid-inner'>
           <div className={styles['content']}>
             <h1 className='title-lrg clr-secondary mb-3 gc-1'>
-              And if you don't
+              And if you {`don't`}
               <span className='clr-tertiary'> know, now you know</span>
             </h1>
 

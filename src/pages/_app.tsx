@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import Layout from '@/components/Layout';
 import { useEffect } from 'react';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
 import gsap from 'gsap';
@@ -25,7 +26,6 @@ export default function App({ Component, pageProps }: AppProps) {
   const lenis = useLenis((lenis: any) => lenis);
   const navIsOpened = useStore(({ navIsOpened }) => navIsOpened);
 
- 
   useEffect(() => {
     if (navIsOpened) {
       lenis?.stop();
@@ -45,7 +45,9 @@ export default function App({ Component, pageProps }: AppProps) {
   // ScrollListener();
   return (
     <ReactLenis root>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ReactLenis>
   );
 }
