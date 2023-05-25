@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Layout from '@/components/Layout';
 import { useEffect } from 'react';
 import { useIsomorphicLayoutEffect } from '@/hooks/useIsomorphicLayout';
+import ViewPortHeight from '@/components/ViewPortHeight';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SplitText from 'gsap/dist/SplitText';
@@ -45,6 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
   // ScrollListener();
   return (
     <ReactLenis root>
+      <ViewPortHeight />
       <Layout>
         <Component {...pageProps} />
       </Layout>

@@ -2,19 +2,21 @@
 @use '@/styles/base/_media' as *;
 
 .btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   appearance: button;
   background-color: transparent;
   color: var(--primary-variant);
   border: 2px solid var(--primary-variant);
   border-radius: 50%;
   margin-right: mobile-vw(5px);
-  cursor: pointer;
-  padding: mobile-vw(10px);
+  height: calc(var(--nav-height) - mobile-vw(16px));
+  width: calc(var(--nav-height) - mobile-vw(16px));
   svg {
-    aspect-ratio: 1;
-    width: auto;
-    height: calc(var(--nav-height) - mobile-vw(42px));
+    height: calc(var(--nav-height) - mobile-vw(40px));
+    width: calc(var(--nav-height) - mobile-vw(40px));
     fill: var(--tertiary-variant);
   }
 
@@ -27,12 +29,13 @@
   }
 
   @include desktop {
-    font-size: desktop-vw(15px);
-    padding: desktop-vw(12px) desktop-vw(12px);
+    width: calc(var(--nav-height) - desktop-vw(24px));
+    height: calc(var(--nav-height) - desktop-vw(24px));
     margin-right: desktop-vw(5px);
 
     svg {
       height: calc(var(--nav-height) - desktop-vw(56px));
+      width: calc(var(--nav-height) - desktop-vw(56px));
     }
   }
 }

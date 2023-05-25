@@ -91,16 +91,18 @@ export default function Menu({}: Props) {
 
   return (
     <>
-      <button
-        role="button"
-        id="btn"
-        onClick={openShopMenu}
-        className={cn(styles['btn'], navIsOpened ? styles['open'] : null)}
-      >
-        <span id="line1" />
-        <span id="line2" />
-        <span id="line3" />
-      </button>
+      <div className={styles['btn-cont']}>
+        <button
+          role="button"
+          id="btn"
+          onClick={openShopMenu}
+          className={cn(styles['btn'], navIsOpened ? styles['open'] : null)}
+        >
+          <span id="line1" />
+          <span id="line2" />
+          <span id="line3" />
+        </button>
+      </div>
 
       <div className={styles.menu} id="cont">
         <div className={styles.overlay}>
